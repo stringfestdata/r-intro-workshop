@@ -1,0 +1,151 @@
+\documentclass[ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\newif\ifbibliography
+\hypersetup{
+            pdftitle={Welcome},
+            pdfauthor={George Mount},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+\title{Welcome}
+\author{George Mount}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Course Website}
+
+georgejmount.com/hillsdaler
+
+\end{frame}
+
+\begin{frame}{Introductions}
+
+\begin{block}{\textbf{Who am I}?}
+
+\begin{itemize}
+\tightlist
+\item
+  PhD student, Design \& Innovation, Case Western Reserve University
+  Weatherhead School of Management
+\item
+  2010 Hillsdale College alum, economics
+\item
+  Research information systems development and organizational agility
+\item
+  R is my main research tool for quantitative analysis
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{\textbf{Who are you?}}
+
+\begin{itemize}
+\tightlist
+\item
+  Name
+\item
+  Year/major/hometown
+\item
+  Statistical software you have used
+\item
+  Why you want to learn R!
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Official Learning Objectives}
+
+An understanding of R and good practices
+
+\begin{itemize}
+\tightlist
+\item
+  The ability to navigate in the RStudio integrated development
+  environment
+\item
+  The ability to load, view and modify data in R
+\item
+  The ability to make simple graphical representations of relationships
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Unofficial learning objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Making your work easier
+\item
+  Having fun with data
+\item
+  Not panicking!
+\end{itemize}
+
+\end{frame}
+
+\end{document}

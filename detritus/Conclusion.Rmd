@@ -1,0 +1,64 @@
+---
+title: "Conclusion"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+---
+
+##This is far from over!
+
+There are always new things to learn in R and possibly you'll pick up on ways to do things better than we did in the class.
+
+R's user base is large, loyal and (mostly) caring. When you get stuck on something, you'll most likely be able to find the answer online.
+
+But before endlessly browsing Google or getting trolled on the forums (more on that later), I'd suggest you read a couple books:
+
+----
+
+![](C:/HillsdaleR/RExcelUsers.jpg)
+
+*R for Excel Users* by John Taveras. This is my favorite introductory book in R. It's great regardless of whether you've used Excel. 
+
+This will take you beyond the concepts covered in our seminar without overwhelming you. 
+
+----
+
+![](C:/HillsdaleR/RDataScience.png)
+
+*R for Data Science* by Hadley Wickham and Garrett Grolemund. 
+
+This is an intermediate-level book on R from the creators of the `tidyverse`. This is likely overdoing it for a beginner. 
+
+If you're interested in data science, keep working on R and picking this book up every so often until you feel comfortable with it. 
+
+##And there's always the internet.
+
+Getting an error code? Google it and the majority of the time you will find an answer and explanation that will solve it.
+
+
+##StackOverflow
+
+![](C:/HillsdaleR/StackOverflow.jpg)
+
+
+**How to use StackOverflow**
+
+StackOverflow is a great resource but be considerate before posting your own questions. Those responding can resemble the famous Seinfeld Soup Nazi if you have not done a **lot** of preparation and your own work before asking a question.
+
+##R-bloggers
+
+Also, subscribe to R bloggers at http://www.r-bloggers.com.
+
+This is a daily roundup of the best R blogging.
+
+While many of the posts are rather advanced, if you see a post that interests you, take a few minutes and at least skim it and get a sense of what packages and techniques the author is using.
+
+The important thing is to *keep learning* about R and to be *be creative* in thinking about how it can help you.
+
+##THANK YOU
+
+I hope this training session has helped you. 
+
+Please email me at george@georgejmount.com with questions, comments or suggestions. 
+
+#Questions? 

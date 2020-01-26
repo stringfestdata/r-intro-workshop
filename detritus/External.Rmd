@@ -1,0 +1,233 @@
+---
+title: "Reading, Writing and Exploring Data"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_knit$set(root.dir = "C:/RFiles")
+```
+
+##Exercise files
+
+Please download all exercise files for this exercise at http://georgejmount.com/hillsdaler.
+
+
+##Loading our libraries
+
+It's a good idea to call the libraries you're going to use in your script at the beginning of the program. 
+
+We will be using two libraries,`tidyverse` and `readxl`. Load them now:
+
+```{r eval=FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+If you see an error message, check your packages are installed: **`install.packages()`**.
+
+#DRILL
+
+1. Install and load the `caret` package to your machine.
+
+---
+
+## Reading in Files from R
+
+While R has its own file extension for storing data, it's more common to reading and writing to outside file types. We will cover how to read and write to `.csv`, `.txt` and `.xlsx` files.
+
+we will be importing in the famous `iris` dataset which is popular in data science training. 
+
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres.
+
+## Working Directories in R
+
+An active R session always has a working directory associated with it. This is where, by default, all files are read and write to. 
+
+Check the location of your current directory with the `getwd` function:
+
+```{r eval=FALSE}
+getwd()
+```
+
+##`getwd`
+
+You can set a working directory with `setwd()`. 
+
+File paths in R are always enclosed in double quotation marks, and R uses forward slashes, not backslashes, when specifying folder locations. This will take some getting used to, especially for Windows users!
+
+```{r eval=FALSE}
+setwd("C:/RFiles/")
+```
+
+
+## Relative and absolute file paths
+
+There are two ways to refer to outside files in R: using relative or absolute file paths.
+
+Which to use? It all depends on whether you have set a **working directory** with `setwd()` and whether the file you want to read/write to is in that folder.
+
+For example, let's say I have the iris dataset saved in the folder `C:/RFiles/` **and** I have set the working directory to the same folder.
+
+In this case I will use the **relative** file path...
+
+```{r eval=FALSE, COLLAPSE=TRUE}
+setwd("C:/RFiles")
+iris<-read_csv("iris.csv")
+```
+
+----
+
+Let's say that instead I had set my working directory to another folder, `"C:/Iris"`.
+
+In this case a relative reference will not work. 
+
+
+
+```{r error=TRUE, COLLAPSE=TRUE, eval=FALSE}
+setwd("C:/Iris")
+iris<-read_csv("iris.csv")
+```
+
+
+Instead, we need to use the *absolute* file path because the file is not in the working directory.
+
+
+```{r error=TRUE, echo=FALSE, eval=FALSE, collapse=TRUE}
+#We will use the absolute file path becuase 
+#the file is not in the current working directory
+iris<-read_csv("C:/RFiles/iris.csv")
+```
+
+----
+
+For the remainder of this unit, I will save all files to `C:/RFiles` which will also be my working directory:
+
+```{r error=TRUE, eval=FALSE, collapse=TRUE}
+setwd("C:/RFiles")
+```
+
+
+##Reading and Writing to CSV Files
+
+To *read* files we will use `read_csv()`
+
+*Make sure to assign this function to an object!* If not, you will simply have read the file in R without any way to call it!
+
+```{r error=TRUE, echo=FALSE, eval=FALSE, collapse=TRUE}
+#assign the iris.csv dataset to iris variable
+iris<-read_csv("iris.csv")
+```
+
+
+To *write* files we will use (you guessed it!) `write_csv()`. 
+
+This function will take one extra argument in that we first type the object where the dataset is pointed to and then write to the file we want.
+
+----
+
+However, we will not need to assign it to an object, since we are exporting it anyway.
+
+```{r error=TRUE, eval=FALSE, COLLAPSE=TRUE}
+#write the iris dataframe to iriswrite.csv
+write_csv(iris,"iriswrite.csv")
+```
+
+This file will now appear in our *working directory* (`C:/RFiles`).
+
+##Reading and writing to .txt files
+
+This will be very similar to the `read_csv` and `write_csv` functions: We use `read_tsv` and `write_tsv`.
+
+```{r error=TRUE, eval=FALSE, collapse=TRUE}
+#assign the iris.txt dataset to iris variable
+iris<-read_tsv("iris.txt")
+```
+
+```{r error=TRUE, eval=FALSE, collapse=TRUE}
+#write the iris dataset to Iriswrite.txt
+iris<-write_tsv("iriswrite.txt")
+```
+
+##Reading and Writing Excel Files
+
+We will now read in the Iris.xlsx file using the `read_excel` function:
+
+```{r error=TRUE, eval=FALSE, collapse=TRUE}
+#read file to excel
+iris<-read_excel("iris.xlsx")
+```
+
+To write files to Excel, we will... **write to csv**.
+
+Unfortunately, the `readxl` package only reads files from Excel, as the name suggests. There are packages to write to Excel, but I find that writing to CSV and then opening in Excel is the easiest way. 
+
+
+```{r error=TRUE, eval=FALSE, collapse=TRUE}
+#write to csv and then open in Excel
+write_csv(iris,"C:/RFiles/iriswrite2.csv")
+```
+
+
+##A sneak peek at your data
+
+If you are used to exploring your data visually, as you might when scrolling down a spreadsheet, you can use `view()`.
+
+```{r, eval=FALSE,collapse=TRUE}
+#open up spreadsheet-type environment
+view(iris)
+```
+
+Because you're often dealing with such huge datasets, it may not be practical to try viewing the entire table. 
+
+##`head` and `tail`
+
+Instead, use `head` and `tail` to print the first and last X rows, respectively.
+
+
+```{r collapse=TRUE}
+#view first 3 observations
+head(iris,3)
+```
+
+```{r collapse=TRUE}
+#view last 3 observations
+tail(iris,3)
+```
+
+##A brief detour of tibbles
+
+You may have noticed your output for the previous functions began with: `A tibble: 3 x 5`.
+
+What exactly is a tibble?
+
+Put simply, it is a 'modern' data frame used by the libraries of the `tidyverse`. They are nearly identical in concept - tibbles are just programmed to work better for `tidyverse` libraries.
+
+Back to our scheduled programming (heh, heh)...
+
+##`str`
+
+The `str()` function gives us an idea of the structure and type of the object. 
+
+```{r collapse=TRUE}
+str(iris)
+```
+
+##`names`
+
+If you just want a list of the names in the dataset, you can run the `names()` function.
+
+```{r collapse=TRUE}
+names(iris)
+```
+
+##`summary`
+
+Finally, you can get summary statistics of your variables with the `summary()` function:
+
+```{r collapse=TRUE}
+summary(iris)
+```
+
+#Questions?
