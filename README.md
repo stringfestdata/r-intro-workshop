@@ -1,4 +1,4 @@
-Resources for Introduction to R Workshop, Hillsdale College Economics Department
+## Resources for "Introduction to R" Workshop, Hillsdale College Economics Department
 
 I am highly indebted to the following sources for this seminar’s materials:
 
