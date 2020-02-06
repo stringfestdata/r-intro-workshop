@@ -1,7 +1,5 @@
-# hillsdale-r
 Resources for Introduction to R Workshop, Hillsdale College Economics Department
 
-**Please download all presentations, code and exercise files** [**HERE.**](https://drive.google.com/drive/folders/15Y2MKxbm0qCAbU9d231BOw1PdTVk-XO0?usp=sharing)
 I am highly indebted to the following sources for this seminar’s materials:
 
 - “[R for Fledglings](https://www.uvm.edu/rsenr/vtcfwru/R/?Page=fledglings/fledglings.htm), ” Vermont Cooperative Fish and Wildlife Research Unit R Projects
